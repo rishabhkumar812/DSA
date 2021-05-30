@@ -8,7 +8,7 @@ double median(vector<int> x,vector<int> y)
         return median(y,x);
     
     int m=x.size(),n=y.size(),totalSize=m+n;
-    int start=0,end=m-1;
+    int start=0,end=m;
     double medianVal;
 
     if(debug)
@@ -84,6 +84,7 @@ double median(vector<int> x,vector<int> y)
                 cout<<"Move right in X"<<endl;
             }
         }
+
     }
     return medianVal;
 }
@@ -97,6 +98,11 @@ int main()
 
     nums1 = {23,26,31,35};
     nums2 = {3,5,7,9,11,16};
+    cout<<std::fixed<<std::setprecision(5);
+    cout <<median(nums1,nums2)<<endl;
+
+     nums1 = {1,3};
+    nums2 = {2};
     cout<<std::fixed<<std::setprecision(5);
     cout <<median(nums1,nums2)<<endl;
 }
