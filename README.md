@@ -1,6 +1,6 @@
 # DSA
 
-Contains special algorithms for data structures and algorithm.
+Contains special algorithms and data structres for DSA.
 
 ## Data structures
 1. Disjoint set template (with rank heuristic and path compression)
