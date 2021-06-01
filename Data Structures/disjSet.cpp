@@ -1,7 +1,3 @@
-#include<bits/stdc++.h>
-using namespace std;
-#define debug false
-
 template <typename T>
 class disJSet
 {
@@ -60,40 +56,4 @@ class disJSet
         }    
     }
 };
-
-int main()
-{
-    char ch;
-    disJSet<pair<int,int>> ds;
-    vector<pair<int,int>> v;
-
-    cout<<"Enter 10 pairs"<<endl;
-    for(int i=0;i<10;++i)
-    {
-        int x,y;
-        cin>>x>>y;
-        v.push_back(pair<int,int>(x,y));
-    }
-    ds.makeSet(v);
-
-    do
-    {
-        for(pair<int,int> i:v)
-        {
-            pair<int,int> p=ds.find(i);
-            cout<<"parent of ("<<i.first<<","<<i.second<<") = ("<<p.first<<","<<p.second<<")"<<endl;
-        }
-
-        int a,b,c,d;
-        cout<<"Type two elements for union"<<endl;
-        cin>>a>>b>>c>>d;
-
-        cout<<"Union is "<<ds.unionOp(pair<int,int>(a,b),pair<int,int>(c,d))<<endl;
-
-        cout<<"Do you want to continue "<<endl;
-        cin>>ch;
-
-    } while (ch=='y');
-    
-}
 
