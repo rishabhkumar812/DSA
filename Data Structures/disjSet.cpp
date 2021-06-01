@@ -41,7 +41,8 @@ class disJSet
             {
                 rank[b_id]=rank[b_id]+1;
             }
-        }    
+        }
+        return true;    
     }
 };
 
