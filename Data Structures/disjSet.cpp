@@ -12,18 +12,6 @@ class disJSet
             parent[i]=i;
             rank[i]=0;
         }
-
-        if(debug)
-        {
-            for(pair<int,int> p:{pair<int,int>(2,4)})
-            {
-                cout<<"parent for ";
-                cout<<"("<<p.first<<","<<p.second<<") is ";
-                cout<<"("<<parent[p].first<<","<<parent[p].second<<")"<<endl;
-                cout<<"p!=parent[p] "<<(p!=parent[p])<<" p==parent[p] "<<(p==parent[p])<<endl;
-                //cout<<"find(p) "<<find(p).first<<<<endl;
-            }
-        }
     }
 
     //Time complexity of O(log*n)
