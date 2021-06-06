@@ -4,6 +4,9 @@ using namespace std;
 //Time complexity of O(log(min(a,b)))
 int gcd(int a,int b)
 {
+    if(a<0 or b<0)
+        return -1;
+    
     if(a>b)
         return gcd(b,a);
     
