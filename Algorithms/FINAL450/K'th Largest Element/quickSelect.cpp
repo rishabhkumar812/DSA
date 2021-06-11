@@ -4,7 +4,7 @@
 
 #include<bits/stdc++.h>
 using namespace std;
-#define debug false
+#define debug true
 
 //O(n)
 int partition(vector<int> &arr,int start,int end,int pivot)
@@ -13,6 +13,11 @@ int partition(vector<int> &arr,int start,int end,int pivot)
     int pivotInd=start;
     for(int i=start;i<end;++i)
     {
+        if(!debug)
+        {
+            cout<<"i="<<i<<endl;
+            cout<<"arr[i]="<<arr[i]<<endl;
+        }
         if(arr[i]<arr[end])
         {
             swap(arr[pivotInd],arr[i]);
@@ -27,12 +32,25 @@ int partition(vector<int> &arr,int start,int end,int pivot)
 int ksmallest(vector<int> &arr,int start,int end,int &k)
 {
     int n=end-start+1;
-    int pivot=rand()%n;
+    int pivot=rand()%n+start;
     int pivotInd=partition(arr,start,end,pivot);
+
+    if(debug)
+    {
+        cout<<"start="<<start<<endl;
+        cout<<"end="<<end<<endl;
+        cout<<"pivot="<<pivot<<endl;
+        cout<<"pivotInd="<<pivotInd<<endl;
+        cout<<"arr[pivotInd]="<<arr[pivotInd]<<endl;
+         for(int i:arr)
+            cout<<i<<" ";
+
+        cout<<endl<<endl;
+    }
 
     if(pivotInd==k-1)
         return arr[pivotInd];
-    
+
     if(k-1<pivotInd)
         return ksmallest(arr,start,pivotInd-1,k);
     
@@ -42,7 +60,16 @@ int ksmallest(vector<int> &arr,int start,int end,int &k)
 
 int main()
 {
-    vector<int> arr={12,3,5,7,19};
+    vector<int> arr={7,10,4,3,20,15};
     int k=3;
+
+    if(debug)
+    {
+        for(int i:arr)
+            cout<<i<<" ";
+
+        cout<<endl<<endl;
+    }
+
     cout<<ksmallest(arr,0,arr.size()-1,k);    
 }
