@@ -39,7 +39,7 @@ class disJSet
             parent[b_id]=a_id;
             if(rank[a_id]==rank[b_id])
             {
-                rank[b_id]=rank[b_id]+1;
+                rank[a_id]=rank[a_id]+1;
             }
         }
         return true;    
